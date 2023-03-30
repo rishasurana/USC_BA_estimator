@@ -11,10 +11,10 @@ from scipy.ndimage import zoom
 from glob import glob
 def processmgz(path_of_mgz):
     brains=[]
-    files = glob(os.path.join(path_of_mgz, "*.mgz"))
+    files = glob(os.path.join(path_of_mgz, '*.mgz'))
     for file in files:
         mgh_file = mgh.load(file)# for each mgz file
-        new_array = zoom(mgh_file.get_data(), (0.5, 0.5, 0.5))
+        new_array = zoom(np.asanyarray(mgh_file.dataobj), (0.5, 0.5, 0.5))
         brains.append(new_array)
         
     brains=np.asarray(brains)
