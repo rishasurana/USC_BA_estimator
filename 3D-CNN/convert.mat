@@ -1,7 +1,0 @@
-cmd = ['mri_convert ' PS14_001.nii ' 'PS14_001.mgz]
-system(cmd)
-
-
-non6000_ukbb_brains.zip
-
-
